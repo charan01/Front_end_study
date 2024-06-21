@@ -1,0 +1,37 @@
+<H1>TODO-LIST</H1>
+<input id="input">
+<button id="A1" onclick="add()">Add</button>
+<ul id="listul">
+    <li>
+        <button id="d1" onclick="deleteitem(event)">Delete</button>
+    </li>
+</ul>
+<style>
+    #d1{
+        background-color: red;
+        font-size: 50px;
+    }
+    #A1{
+        background-color: green;
+        font-size: 50px;
+    }
+    #D2{
+        background-color: red;
+        font-size: 50px;
+    }
+</style>
+
+<script>
+    var input=document.getElementById("input")
+    var listul=document.getElementById("listul")
+    function add()
+    {
+        var listitem=document.createElement("li")
+        listitem.innerHTML=input.value+"<button id='D2'onclick='deleteitem(event)'>Delete</button>"
+        listul.append(listitem)
+    }
+    function deleteitem(event)
+    {
+        event.target.parentElement.remove()
+    }
+</script>
